@@ -1,0 +1,364 @@
+/* Global reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top left, #e3f2fd, #f8fafc);
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Auth page */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 28px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.08),
+    0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+.brand-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.brand-subtitle {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.auth-form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.field-label input {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  font-size: 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field-label input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+}
+
+.btn-primary {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 11px 16px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.03);
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-secondary {
+  margin-top: 14px;
+  width: 100%;
+  border-radius: 999px;
+  padding: 10px 16px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #111827;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.08s ease;
+}
+
+.btn-secondary:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-0.5px);
+}
+
+.alert-error {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+/* App shell / home page */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  height: 64px;
+  padding: 0 32px;
+  background: rgba(15, 23, 42, 0.98);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.3);
+  font-size: 13px;
+}
+
+.btn-outline {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn-outline:hover {
+  background: #e5e7eb;
+  color: #0f172a;
+  border-color: #e5e7eb;
+}
+
+.content {
+  flex: 1;
+  padding: 24px 32px 32px;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.mode-toggle {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  color: #4b5563;
+}
+
+.chip-active {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+  color: #111827;
+}
+
+.search-row {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 220px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  padding: 9px 14px;
+  font-size: 14px;
+}
+
+.btn-primary-sm {
+  border-radius: 999px;
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  cursor: pointer;
+}
+
+.btn-outline-sm {
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  padding: 6px 12px;
+  font-size: 13px;
+  background: #ffffff;
+  color: #1f2933;
+  cursor: pointer;
+}
+
+.grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 16px 16px 14px;
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.05),
+    0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #ecfeff;
+  color: #0f766e;
+}
+
+.card-title {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-description {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+  min-height: 38px;
+}
+
+.card-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.empty-state {
+  margin-top: 40px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    padding: 0 16px;
+  }
+
+  .content {
+    padding: 18px 16px 24px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
